@@ -1,0 +1,112 @@
+<<<<<<< Updated upstream
+=======
+@import "tailwindcss";
+
+@theme {
+  /* --- COULEURS CHARTE NOUR ACADEMY --- */
+  --color-bleu-profond: #173B57;
+  --color-turquoise: #20A89E;
+  --color-bleu-brume: #DCEFF0;
+  --color-gris-clair: #F5F7FA;
+  --color-ardoise: #263746;
+  --color-vert-doux: #D9F2EF;
+  --color-gris-secondaire: #64748B;
+  --color-blanc: #FFFFFF;
+  --color-text-picker: #142930;
+  --color-red: #FF0000;
+  --color-green-cyan: #DBE3E0;
+  --color-Bleu-nuit: #0E2936;
+
+  /* --- COULEURS DES BOUTONS --- */
+  --color-btn-principal-bg: #173B57;
+  --color-btn-principal-text: #FFFFFF;
+  --color-btn-principal-hover: #112D43;
+
+  --color-btn-secondaire-border: #173B57;
+  --color-btn-secondaire-text: #173B57;
+  --color-btn-secondaire-hover-bg: #DCEFF0;
+
+  --color-btn-action-bg: #20A89E;
+  --color-btn-action-text: #FFFFFF;
+  --color-btn-action-hover: #188981;
+
+  --color-btn-focus-ring: #20A89E;
+
+  /* --- TYPOGRAPHIES --- */
+  --font-titre: 'Poppins', sans-serif;
+  --font-texte: 'Inter', sans-serif;
+
+  /* --- ESPACEMENTS --- */
+  --spacing-xs: 8px;
+  --spacing-s: 16px;
+  --spacing-m: 24px;
+  --spacing-l: 40px;
+  --spacing-xl: 64px;
+}
+
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #FFFFFF;
+    font-family: arial sans-serif;
+}
+/* style header*/
+/* .header-navbar{
+    width: 100%;
+    min-height: 80px;
+    padding: 16px 40px;
+    background-color: #ffffff;
+}
+.Navigationr-links{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.Navigationr-links img {
+    height: 80px;
+    width: auto;
+    display: block;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    gap: 30px;
+}
+.navbar a{
+    text-decoration: none;
+    font-size: medium;
+    color: #142930;
+}
+.navbar a:hover{
+    color: red;
+    cursor: pointer;
+}
+.navigation-icone{
+    display: flex;
+    gap: 20px;
+    
+}
+.navigation-icone button{
+    width: 150px;
+    height: 44px;
+}
+.btn-1{
+    background-color: #FFFFFF;
+    border-radius: 25px;
+    border-color: #DBE3E0;
+    cursor: pointer;
+}
+.btn-2{
+    background-color: #009491;
+    border-radius: 25px;
+    border-color: #DBE3E0;
+    cursor: pointer;
+
+} */ 
+
+>>>>>>> Stashed changes
