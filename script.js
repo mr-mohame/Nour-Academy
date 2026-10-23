@@ -134,21 +134,32 @@ function afficher(){
     </div>
 
     <div class="my-4 text-center">
-    <h3 class="text-2xl font-bold text-[#0E2936]">${formation.matiere}</h3>
+    <h3 class="text-2xl font-bold text-Bleu-nuit">${formation.matiere}</h3>
     <p class="mt-2 text-sm text-gray-500">${formation.creneau}</p>
     </div>
 
     <div class="mt-4 w-full items-baseline flex justify-between">
-     <div class="text-lg font-bold text-[#0E2936]">${formation.prix} DH<span class="text-sm font-medium text-[#0E2936]"> / mois</span></div>
+     <div class="text-lg font-bold text-Bleu-nuit">${formation.prix} DH<span class="text-sm font-medium text-Bleu-nuit"> / mois</span></div>
      <div class="text-sm font-medium text-[#008B6B]">${formation.places} place</div>
     </div>
 
+    ${buttonFormation(formation)}
+
     </div>
-
-
-
     `
-    // console.log(formation.titre);
+  }
+
+}
+function buttonFormation(formations){
+  if(formations.places > 0){
+    return `<button class="w-full mt-4 bg-[#009491] p-2 rounded-xl text-white cursor-pointer">
+        Ajouter au panier
+      </button>`;
+
+  }else{
+    return `<button disabled class="w-full mt-4 bg-gray-400 p-2 rounded-xl text-white cursor-not-allowed">
+        Complet
+      </button>`;
   }
 
 }
