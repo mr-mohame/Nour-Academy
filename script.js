@@ -1,6 +1,6 @@
 const formations = [
   {
-    
+    id: 1,
     titre: "Mathematiques",
     matiere: "Mathematiques",
     niveau: "Primaire",
@@ -9,7 +9,7 @@ const formations = [
     places: 5
   },
   {
-    
+    id: 2,
     titre: "Francais",
     matiere: "Francais",
     niveau: "Primaire",
@@ -18,7 +18,7 @@ const formations = [
     places: 8
   },
   {
-    
+    id: 3,
     titre: "Arabe",
     matiere: "Arabe",
     niveau: "Primaire",
@@ -27,7 +27,7 @@ const formations = [
     places: 10
   },
   {
-    
+    id: 4,
     titre: "Anglais",
     matiere: "Anglais",
     niveau: "Primaire",
@@ -36,7 +36,7 @@ const formations = [
     places: 6
   },
   {
-    
+    id: 5,
     titre: "Mathématiques",
     matiere: "Mathematiques",
     niveau: "College",
@@ -45,7 +45,7 @@ const formations = [
     places: 4
   },
   {
-    
+    id: 6,
     titre: "Physique-Chimie",
     matiere: "Physique-Chimie",
     niveau: "College",
@@ -54,7 +54,7 @@ const formations = [
     places: 0
   },
   {
-    
+    id: 7,
     titre: "SVT",
     matiere: "SVT",
     niveau: "College",
@@ -63,7 +63,7 @@ const formations = [
     places: 7
   },
   {
-    
+    id: 8,
     titre: "Français",
     matiere: "Francais",
     niveau: "College",
@@ -72,7 +72,7 @@ const formations = [
     places: 3
   },
   {
-    
+    id: 9,
     titre: "Mathématiques",
     matiere: "Mathematiques",
     niveau: "Lycee",
@@ -81,7 +81,7 @@ const formations = [
     places: 5
   },
   {
-    
+    id: 10,
     titre: "Physique-Chimie",
     matiere: "Physique-Chimie",
     niveau: "Lycee",
@@ -90,7 +90,7 @@ const formations = [
     places: 2
   },
   {
-    
+    id: 11,
     titre: "Philosophie",
     matiere: "Philosophie",
     niveau: "Lycee",
@@ -99,7 +99,7 @@ const formations = [
     places: 0
   },
   {
-    
+    id: 12,
     titre: "Anglais",
     matiere: "Anglais",
     niveau: "Lycee",
@@ -108,6 +108,13 @@ const formations = [
     places: 6
   }
 ];
+
+let panier = [];
+ // ajouter au panier 
+ const container = document.querySelector("#formation-liste");
+ container.addEventListener("click", function(event){
+  console.log("ajouter formation avec succes");
+ }) 
 
 
 
@@ -152,7 +159,7 @@ function afficher(){
 }
 function buttonFormation(formations){
   if(formations.places > 0){
-    return `<button class="w-full mt-4 bg-[#009491] p-2 rounded-xl text-white cursor-pointer">
+    return `<button data-id=${formations.id} class="w-full mt-4 bg-[#009491] p-2 rounded-xl text-white cursor-pointer hover:text-red">
         Ajouter au panier
       </button>`;
 
