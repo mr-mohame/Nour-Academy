@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,7 +25,7 @@
                 </div>
                
                 <label for="menu-tag" class=" text-blanc md:hidden cursor-pointer flex flex-col justify-center gap-1 z-50 text-5xl">☰</label>
-                <ul class="hidden peer-checked:block absolute top-full left-0 w-full bg-Bleu-nuit text-blanc p-5 m-0 flex-col gap-5 md:static md:flex md:flex-row md:w-auto md:p-4">
+                <ul class="hidden peer-checked:block absolute z-40 top-full left-0 w-full bg-Bleu-nuit text-blanc p-5 m-0 flex-col gap-5 md:static md:flex md:flex-row md:w-auto md:p-4">
                     <li><a href="#Accueil" class="hover:text-red">Accueil</a></li>
                     <li><a href="#Formations"  class="hover:text-red">Formations</a></li>
                     <li><a href="#Pourquoi-nous"  class="hover:text-red">Pourquoi nous</a></li>
@@ -34,20 +34,33 @@
             </div>           
         </nav>
     </header>
+
+
+
+
+
     <!-- main -->
     <main class="bg-blanc m-0 p-0 ">
-        <!-- section de formation -->
-           <!--section de titer-->
-         <!-- <section class="font-texte text-[25px] font-bold p-5 m-0">
-                <h2>Nos formations</h2>
-         </section> -->
-           <!--section de filter-->         
-         <!-- <section>
+        <section id="Accueil" class="bg-[#FAF7ED] w-full  md:p-4 m-0 border-slate-200">
+            <div class="md:flex md:items-center md:justify-between md:gap-8 p-5 m-0 w-full max-w-7xl mx-auto">
+                <div class="md:w-1/2">
+                    <p class="bg-[#E3F5F0] rounded-2xl px-1 text-[#055C5E] font-medium font-texte md:w-max">SOUTIEN SCOLAIRE & LANGUES</p>
+                    <h2 class="text-Bleu-nuit text-[30px] font-texte font-bold gap-4 px-1 ">Réussissez aujourd’hui, préparez votre avenir.</h2>
+                    <p class="text-[#5E6E73] font-texte font-normal text-[15px]">Un accompagnement bienveillant et des cours adaptés pour aider chaque élève à progresser et gagner en confiance.</p>
+                    <a href="#Formations">
+                        <button class="bg-[#009491] w-full p-2 my-3 rounded-2xl cursor-pointer shadow-olive-400 text-blanc font-texte font-bold hover:text-red">Découvrir les formations</button>
+                    </a>
+                    
+                </div>
+                <div class="hidden md:block ">
+                    <img src="img/img.webp" alt="Élèves en classe dans un environnement d’apprentissage" class="w-full h-auto md:w-[600px]">
+                </div>
+                
+            </div>
+        </section>
 
-
-         </section> -->
            <!--section de nos formation-->          
-        <section id="formation" class="bg-[#FAF7ED] py-1 px-2 m-0 border-slate-200">
+        <section id="Formations" class="bg-[#FAF7ED] py-1 px-2 m-0 border-slate-200">
             <div id="container" class="p-3 m-0 w-full max-w-7xl mx-auto">
                 <h2 class="font-texte text-[25px] font-bold">Nos formations</h2>
                 <p class="font-texte font-normal text-sm md:text-base text-gris-secondaire">Trouvez le cours adapté au niveau et aux besoins de votre enfant.</p>
@@ -79,8 +92,11 @@
                 <div id="formation-liste" class="bg-[#FAF7ED] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 p-4">
                     
                 </div>
+
             </div>
         </section>
+
+        
     
     
      </main>
