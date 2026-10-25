@@ -1,37 +1,63 @@
 <!DOCTYPE html>
 <html lang="fr" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Nour Academy</title>
+    <script src="script.js" defer></script>
 </head>
+
 <body class="bg-blanc font-titre m-0 p-0 box-border">
     <!-- header page -->
     <header>
         <nav class="bg-Bleu-nuit h-16 text-picker relative">
             <div class="max-w-9xl mx-auto h-full flex justify-between items-center relative">
                 <a href="#Accueil" class="flex item-center h-full">
-                     <img src="img/logo.webp" alt="logo de nour academy" class="h-full w-auto ">
+                    <img src="img/logo.webp" alt="logo de nour academy" class="h-full w-auto ">
                 </a>
-                
+
                 <input type="checkbox" id="menu-tag" class="peer hidden">
-                
-                
-                <div class="flex items-center  gap-4 md:order-last h-full md:m-6">
-                    <button id="btn" class="bg-blanc px-3 py-1 border-green-cyan rounded-[10px] text-xl flex items-center gap-1 cursor-pointer ">
+
+
+                <div class="relative flex items-center  gap-4 md:order-last h-full md:m-6">
+                    <button id="btn"
+                        class="bg-blanc px-3 py-1 border-green-cyan rounded-[10px] text-xl flex items-center gap-1 cursor-pointer hover:bg-[red]">
                         <span>🛒</span> Panier
                     </button>
+
+                    <!-- cart-pop-up-->
+                    <div id="cart-popup"
+                        class="hidden absolute right-0 top-full z-50 mt-2 w-72 max-w-[90vw] rounded-xl bg-blanc p-5 shadow-xl">
+                        <div id="main-cart" class="">
+                            <div id="header-cart" class="flex items-center justify-between">
+                                <h2 class="text-xl font-bold">Mon panier</h2>
+                                <button id="cart-close" type="button" aria-label="Fermer le panier" class="cursor-pointer hover:bg-yellow-200">
+                                    &times;
+                                </button>
+                            </div>
+                            <div id="hero-cart">
+
+                            </div>
+                            <div id="footer-cart">
+
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
-               
-                <label for="menu-tag" class=" text-blanc md:hidden cursor-pointer flex flex-col justify-center gap-1 z-50 text-5xl">☰</label>
-                <ul class="hidden peer-checked:block absolute z-40 top-full left-0 w-full bg-Bleu-nuit text-blanc p-5 m-0 flex-col gap-5 md:static md:flex md:flex-row md:w-auto md:p-4">
+
+                <label for="menu-tag"
+                    class=" text-blanc md:hidden cursor-pointer flex flex-col justify-center gap-1 z-50 text-5xl">☰</label>
+                <ul
+                    class="hidden peer-checked:block absolute z-40 top-full left-0 w-full bg-Bleu-nuit text-blanc p-5 m-0 flex-col gap-5 md:static md:flex md:flex-row md:w-auto md:p-4">
                     <li><a href="#Accueil" class="hover:text-red">Accueil</a></li>
-                    <li><a href="#Formations"  class="hover:text-red">Formations</a></li>
-                    <li><a href="#Pourquoi-nous"  class="hover:text-red">Pourquoi nous</a></li>
-                </ul>  
-                  
-            </div>           
+                    <li><a href="#Formations" class="hover:text-red">Formations</a></li>
+                    <li><a href="#Pourquoi-nous" class="hover:text-red">Pourquoi nous</a></li>
+                </ul>
+
+            </div>
         </nav>
     </header>
 
@@ -41,44 +67,53 @@
         <section id="Accueil" class="bg-[#FAF7ED] w-full  md:p-4 m-0 border-slate-200">
             <div class="md:flex md:items-center md:justify-between md:gap-8 p-5 m-0 w-full max-w-7xl mx-auto">
                 <div class="md:w-1/2">
-                    <p class="bg-[#E3F5F0] rounded-2xl px-1 text-[#055C5E] font-medium font-texte md:w-max">SOUTIEN SCOLAIRE & LANGUES</p>
-                    <h2 class="text-Bleu-nuit text-[30px] font-texte font-bold gap-4 px-1 ">Réussissez aujourd’hui, préparez votre avenir.</h2>
-                    <p class="text-[#5E6E73] font-texte font-normal text-[15px]">Un accompagnement bienveillant et des cours adaptés pour aider chaque élève à progresser et gagner en confiance.</p>
+                    <p class="bg-[#E3F5F0] rounded-2xl px-1 text-[#055C5E] font-medium font-texte md:w-max">SOUTIEN
+                        SCOLAIRE & LANGUES</p>
+                    <h2 class="text-Bleu-nuit text-[30px] font-texte font-bold gap-4 px-1 ">Réussissez aujourd’hui,
+                        préparez votre avenir.</h2>
+                    <p class="text-[#5E6E73] font-texte font-normal text-[15px]">Un accompagnement bienveillant et des
+                        cours adaptés pour aider chaque élève à progresser et gagner en confiance.</p>
                     <a href="#Formations">
-                        <button class="bg-[#009491] w-full p-2 my-3 rounded-2xl cursor-pointer shadow-olive-400 text-blanc font-texte font-bold hover:text-red">Découvrir les formations</button>
+                        <button
+                            class="bg-[#009491] w-full p-2 my-3 rounded-2xl cursor-pointer shadow-olive-400 text-blanc font-texte font-bold hover:text-red">Découvrir
+                            les formations</button>
                     </a>
-                    
+
                 </div>
                 <div class="hidden md:block ">
-                    <img src="img/img.webp" alt="Élèves en classe dans un environnement d’apprentissage" class="w-full h-auto md:w-[600px]">
+                    <img src="img/img.webp" alt="Élèves en classe dans un environnement d’apprentissage"
+                        class="w-full h-auto md:w-[600px]">
                 </div>
-                
+
             </div>
         </section>
 
         <!-- section pour l'acceuil-->
         <section id="Accueil" class="bg-blanc p-5 text-center">
             <h2 class="text-Bleu-nuit font-bold text-2xl font-texte">Le bon accompagnement pour chaque parcours</h2>
-            <p class="text-[#5E6E73] font-texte font-normal text-[15px]">Soutien scolaire et cours de langues à Nador.</p>
+            <p class="text-[#5E6E73] font-texte font-normal text-[15px]">Soutien scolaire et cours de langues à Nador.
+            </p>
         </section>
 
-        <!--section de nos formation-->          
+        <!--section de nos formation-->
         <section id="Formations" class="bg-[#FAF7ED] py-1 px-2 m-0 border-slate-200">
             <div id="container" class="p-3 m-0 w-full max-w-7xl mx-auto">
                 <h2 class="font-texte text-[25px] font-bold">Nos formations</h2>
-                <p class="font-texte font-normal text-sm md:text-base text-gris-secondaire">Trouvez le cours adapté au niveau et aux besoins de votre enfant.</p>
+                <p class="font-texte font-normal text-sm md:text-base text-gris-secondaire">Trouvez le cours adapté au
+                    niveau et aux besoins de votre enfant.</p>
                 <div id="filter" class="flex flex-col md:flex-row my-3 gap-3 font-texte font-bold text-sm text-ardoise">
                     <div class="  bg-blanc border border-green-cyan rounded-xl cursor-pointer w-full md:1/2 flex-1">
                         <select class="w-full p-4" name="chose_course" id="niveau-select" required oninput="afficher()">
                             <option value="" placeholder>Choisir le niveau</option>
                             <option value="Primaire">Primaire</option>
                             <option value="College">College</option>
-                            <option value="Lycee">Lycee</option>    
+                            <option value="Lycee">Lycee</option>
                         </select>
                     </div>
 
                     <div class="  bg-blanc border border-green-cyan rounded-xl cursor-pointer w-full md:1/2 flex-1">
-                        <select class="w-full p-4" name="chose_course" id="matieres-select" required oninput="afficher()">
+                        <select class="w-full p-4" name="chose_course" id="matieres-select" required
+                            oninput="afficher()">
                             <option value="" placeholder>Choisir la matière</option>
                             <option value="Mathematiques">Mathematiques</option>
                             <option value="Physique-Chimie">Physique-Chimie</option>
@@ -86,26 +121,27 @@
                             <option value="Francais">Francais</option>
                             <option value="Arabe">Arabe</option>
                             <option value="Anglais">Anglais</option>
-                            <option value="Philosophie">Philosophie</option> 
+                            <option value="Philosophie">Philosophie</option>
                         </select>
                     </div>
                 </div>
 
                 <!--formaation liste -->
                 <div id="formation-liste" class="bg-[#FAF7ED] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 p-4">
-                    
+
                 </div>
 
             </div>
         </section>
 
-        <!--section de chiffres d'academy--> 
+        <!--section de chiffres d'academy-->
         <section id="Pourquoi-nous" class="bg-blanc p-7 m-0 border-slate-200">
             <h2 class="text-Bleu-nuit font-bold text-2xl font-texte">Pourquoi Nour Academy ?</h2>
-            <div class="flex flex-wrap gap-4 lg:flex-nowrap my-3">   
+            <div class="flex flex-wrap gap-4 lg:flex-nowrap my-3">
                 <div class="bg-[#E3F5F0] p-4 w-full lg:w-1/4">
                     <h3 class="text-Bleu-nuit font-bold text-2xl font-texte">Suivi personnalisé</h3>
-                    <p class="text-[#5E6E73] font-texte font-normal text-[15px]">Un accompagnement pensé pour chaque élève.</p>
+                    <p class="text-[#5E6E73] font-texte font-normal text-[15px]">Un accompagnement pensé pour chaque
+                        élève.</p>
                 </div>
                 <div class="bg-[#E3F5F0] p-4 w-full lg:w-1/4">
                     <h3 class="text-Bleu-nuit font-bold text-2xl font-texte">Équipe pédagogique</h3>
@@ -120,13 +156,17 @@
                     <p class="text-[#5E6E73] font-texte font-normal text-[15px]">Chiffre issu du brief du projet.</p>
                 </div>
             </div>
-            
+
         </section>
-     </main>
+    </main>
+
+
+
     <!-- footer -->
-     <footer class="bg-Bleu-nuit h-16 text-picker relative ">
+    <footer class="bg-Bleu-nuit h-16 text-picker relative ">
         <p class="text-blanc p-4 flex items-center justify-center">&copy; 2026 Nour Academy. Tous droits réservés.</p>
-     </footer>
-      <script src="script.js"></script> 
+    </footer>
+
 </body>
+
 </html>

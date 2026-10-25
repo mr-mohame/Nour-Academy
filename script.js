@@ -109,12 +109,26 @@ const formations = [
   }
 ];
 
-let panier = [];
- // ajouter au panier 
- const container = document.querySelector("#formation-liste");
- container.addEventListener("click", function(event){
-  console.log("ajouter formation avec succes");
- }) 
+// let panier = [];
+//  // ajouter au panier 
+//  const container = document.querySelector("#formation-liste");
+//  container.addEventListener("click", function(event){
+//   c
+  
+//   // console.log(event.target);
+//  }) 
+
+const panier = document.querySelector("#btn");
+const cart_popup = document.querySelector("#cart-popup");
+const close_popup = document.querySelector("#cart-close");
+panier.addEventListener("click", function (){
+  cart_popup.classList.remove("hidden");
+});
+
+close_popup.addEventListener("click", function (){
+  cart_popup.classList.add("hidden");
+});
+
 
 
 
