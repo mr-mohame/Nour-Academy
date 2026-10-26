@@ -21,7 +21,7 @@
                 <input type="checkbox" id="menu-tag" class="peer hidden">
                 <div class="relative flex items-center  gap-4 md:order-last h-full md:m-6">
                     <button id="btn"
-                        class="bg-blanc px-3 py-1 border-green-cyan rounded-[10px] text-xl flex items-center gap-1 cursor-pointer hover:bg-[red]">
+                        class="bg-blanc px-3 py-1 border-green-cyan rounded-[10px] text-xl flex items-center gap-1 cursor-pointer hover:text-red">
                         <span>🛒</span> Panier
                     </button>
 
@@ -31,16 +31,19 @@
                         <div id="main-cart">
                             <div id="header-cart" class="flex items-center justify-between">
                                 <h2 class="text-xl font-bold">Mon panier</h2>
-                                <button id="cart-close" type="button" aria-label="Fermer le panier" class="cursor-pointer hover:bg-yellow-200">
+                                <button id="cart-close" type="button" aria-label="Fermer le panier"
+                                    class="cursor-pointer hover:bg-yellow-200">
                                     &times;
                                 </button>
                             </div>
-                            <p class="text-[#617075] text-[12px] font-normal font-texte pt-2 mb-6">Vérifiez vos choix avant de commencer l'inscription.</p>
+                            <p class="text-[#617075] text-[12px] font-normal font-texte pt-2 mb-6">Vérifiez vos choix
+                                avant de commencer l'inscription.</p>
                             <div id="hero-cart">
 
                             </div>
                             <div id="footer-cart" class="py-4">
-                                  <p class="text-center text-[11px] text-[#617075] font-texte ">Vos choix sont conservés pendant cette étape.</p>
+                                <p class="text-center text-[11px] text-[#617075] font-texte ">Vos choix sont conservés
+                                    pendant cette étape.</p>
                             </div>
                         </div>
                     </div>
@@ -157,6 +160,67 @@
 
         </section>
     </main>
+
+    <!-- Popup inscription -->
+    <div id="popup-inscription" class="hidden bg-[#ffffff] ">
+        <div class="m-5 bg-[#ffffff] p-3">
+            <div id="header-cart" class="flex items-center justify-between px-2">
+                <h2 class="text-xl font-bold">Nour Academy</h2>
+                <button id="cart-close" type="button" aria-label="Fermer le panier"
+                    class="cursor-pointer hover:bg-yellow-200">&times;</button>
+            </div>
+            <div class="m-3">
+                <h3 class="text-center text-[24px] font-bold text-[#0E2936]">Commençons l’inscription</h3>
+                <p class="text-[12px] font-normal text-[#617075]">Quelques informations pour que notre équipe vous
+                    accompagne.</p>
+            </div>
+            <div class="">
+                <form id="form-inscription" class="mt-3 flex flex-col gap-4 p-3">
+                    <label for="nom" class="text-[15px] font-semibold text-[#142930]">Nom du parent *</label>
+                    <input id="nom" name="nom" type="text" placeholder="Ex. : Sara Amrani"
+                        class="rounded-2xl border border-[#dbe3e0] p-3" />
+                    <label for="nom" class="text-[15px] font-semibold text-[#142930]">Téléphone *</label>
+                    <input type="tel" id="telephone" name="telephone" placeholder="+212 6XX XX XX XX" required
+                        class="rounded-2xl border border-[#dbe3e0] p-3" />
+                    <label for="nom" class="text-[15px] font-semibold text-[#142930]">Adresse e-mail *</label>
+                    <input type="email" id="email" name="email" placeholder="parent@exemple.com" required
+                        class="rounded-2xl border border-[#dbe3e0] p-3" />
+                    <label for="nom" class="text-[15px] font-semibold text-[#142930]">Nom complet de l’élève *</label>
+                    <input id="nom" name="nom" type="text" placeholder="Prénom et nom"
+                        class="rounded-2xl border border-[#dbe3e0] p-3" />
+                    <!-- <h3>Informations scolaires</h3> -->
+                    <label for="niveau" class="text-[15px] font-semibold text-[#142930]">Niveau scolaire</label>
+                    <select id="niveau" name="niveau" required class="rounded-2xl border border-[#dbe3e0] p-3">
+                        <option value="">Choisir un niveau</option>
+                        <option value="primaire">Primaire</option>
+                        <option value="college">Collège</option>
+                        <option value="lycee">Lycée</option>
+                    </select>
+                    <!-- <h3>Centre souhaité *</h3>  -->
+                    <label for="centre" class="text-[15px] font-semibold text-[#142930]">Centre souhaité *</label>
+                    <select id="centre" name="centre" required class="rounded-2xl border border-[#dbe3e0] p-3">
+                        <option value="">Choisir un centre</option>
+                        <option value="nador-centre">Nador Centre</option>
+                        <option value="hay-al-matar">Hay Al Matar</option>
+                        <option value="selouane">Selouane</option>
+                    </select>
+                </form>
+            </div>
+            <div class="flex items-center gap-3 p-3">
+                <input type="checkbox" id="contact" name="contact"
+                    class="h-7 w-7 shrink-0 cursor-pointer appearance-none rounded-lg border-2 border-teal-500 checked:border-teal-600 checked:bg-teal-600 checked:after:flex checked:after:items-center checked:after:justify-center checked:after:text-white checked:after:content-['✓']" />
+                <label for="contact" class="cursor-pointer text-lg text-gray-800"> J’accepte d’être contacté(e) pour
+                    cette
+                    demande. </label>
+            </div>
+            <div class="w-full flex justify-center items-center">
+                <button
+                    class=" border w-70 my-auto bg-[#00A8A6] text-white p-3 rounded-3xl cursor-pointer hover:bg-white hover:text-[#00A8A6]">
+                    Envoyer la demande
+                </button>
+            </div>
+        </div>
+    </div>
 
 
 
