@@ -1,5 +1,3 @@
-// const { compile } = require("tailwindcss");
-
 const formations = [
   {
     id: 1,
@@ -110,6 +108,8 @@ const formations = [
     places: 6
   }
 ];
+
+
 // ajouter au panier 
 let Panier_list = [];
 const container = document.querySelector("#formation-liste");
@@ -137,6 +137,7 @@ container.addEventListener("click", function (event) {
     console.log("cette formation est deja dans le panier");
   }
 });
+
 //pour ajouter au panier et afficher sur le panier
 const main_hero_cart = document.querySelector("#hero-cart");
 function afficherPanier() {
@@ -150,7 +151,9 @@ function afficherPanier() {
       <h3>${formation.matiere} — ${formation.niveau}</h3>
       <div class="flex justify-between items-center">
           <h3 class="font-extrabold text-slate-900 text-2xl">${formation.prix}<span> DH</span></h3>
-          <button class="text-xl font-normal text-emerald-600 cursor-pointer">Retirer</button>
+          <button data-id="${formation.id} class="text-xl rounded-2xl font-normal text-emerald-600 cursor-pointer hover:text-red-500">
+          Retirer
+          </button>
       </div>   
     </div>     
     `;
@@ -167,11 +170,12 @@ function afficherPanier() {
   `;
   main_hero_cart.innerHTML += `
   <div class="">
-    <button class="w-full bg-[#00A8A6] rounded-2xl p-3 font-bold text-blanc hover:bg-red-300">Ajouter une autre formation</button>
+    <button class=" btn_retirer w-full bg-[#00A8A6] rounded-2xl p-3 font-bold text-blanc hover:bg-red-300">Continuer vers l’inscription</button>
   
   `
 }
- 
+
+
 // pour afficher le popup avec panier et closes avec X et panier 
 const panier = document.querySelector("#btn");
 const cart_popup = document.querySelector("#cart-popup");
