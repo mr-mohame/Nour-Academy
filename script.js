@@ -1,3 +1,5 @@
+// const { compile } = require("tailwindcss");
+
 const formations = [
   {
     id: 1,
@@ -108,31 +110,84 @@ const formations = [
     places: 6
   }
 ];
+// ajouter au panier 
+let Panier_list = [];
+const container = document.querySelector("#formation-liste");
+container.addEventListener("click", function (event) {
+  const bouton = event.target.closest(".btn-ajouter");
+  if (!bouton) return;
+  const idchoix = Number(bouton.dataset.id);
 
-// let panier = [];
-//  // ajouter au panier 
-//  const container = document.querySelector("#formation-liste");
-//  container.addEventListener("click", function(event){
-//   c
+  let formationChoix;
+  for (let i = 0; i < formations.length; i++) {
+    if (formations[i].id === idchoix) {
+      formationChoix = formations[i];
+      break;
+    }
+  }
+
+  const dejaAjoutee = Panier_list.find(function (formation) {
+    return formation.id === idchoix;
+  });
+
+  if (!dejaAjoutee && formationChoix) {
+    Panier_list.push(formationChoix);
+    afficherPanier();
+  } else {
+    console.log("cette formation est deja dans le panier");
+  }
+});
+//pour ajouter au panier et afficher sur le panier
+const main_hero_cart = document.querySelector("#hero-cart");
+function afficherPanier() {
+  main_hero_cart.innerHTML = "";
+  let total = 0;
+  for (let i = 0; i < Panier_list.length; i++) {
+    const formation = Panier_list[i];
+    total += formation.prix;
+    main_hero_cart.innerHTML += `
+    <div class=" bg-[#FAF7ED] mb-3 rounded-lg border p-3">
+      <h3>${formation.matiere} — ${formation.niveau}</h3>
+      <div class="flex justify-between items-center">
+          <h3 class="font-extrabold text-slate-900 text-2xl">${formation.prix}<span> DH</span></h3>
+          <button class="text-xl font-normal text-emerald-600 cursor-pointer">Retirer</button>
+      </div>   
+    </div>     
+    `;
+  }
+  main_hero_cart.innerHTML += `
+  <div class=" bg-[#E8F5F2] mb-4 rounded-lg border p-4"> 
+        <div class="flex justify-between items-center mb-1">
+            <span class="text-slate-500 text-sm">Total mensuel estimé</span>
+            <span class="text-xl font-black text-slate-900">${total} DH</span>
+        </div> 
+        <p class="text-xs text-slate-400">Tarifs indicatifs, à confirmer par le centre.</p>
+  </div>
   
-//   // console.log(event.target);
-//  }) 
-
+  `;
+  main_hero_cart.innerHTML += `
+  <div class="">
+    <button class="w-full bg-[#00A8A6] rounded-2xl p-3 font-bold text-blanc hover:bg-red-300">Ajouter une autre formation</button>
+  
+  `
+}
+ 
+// pour afficher le popup avec panier et closes avec X et panier 
 const panier = document.querySelector("#btn");
 const cart_popup = document.querySelector("#cart-popup");
 const close_popup = document.querySelector("#cart-close");
-panier.addEventListener("click", function (){
-  cart_popup.classList.remove("hidden");
+panier.addEventListener("click", function () {
+  cart_popup.classList.toggle("hidden");
 });
 
-close_popup.addEventListener("click", function (){
+close_popup.addEventListener("click", function () {
   cart_popup.classList.add("hidden");
 });
 
 
 
-
-function afficher(){
+// pour afficher les produit 
+function afficher() {
   const container = document.querySelector("#formation-liste");
   const niveau_choisi = document.querySelector("#niveau-select").value;
   const matiere_choisi = document.querySelector("#matieres-select").value;
@@ -171,13 +226,13 @@ function afficher(){
   }
 
 }
-function buttonFormation(formations){
-  if(formations.places > 0){
-    return `<button data-id=${formations.id} class="w-full mt-4 bg-[#009491] p-2 rounded-xl text-white cursor-pointer hover:text-red">
+function buttonFormation(formations) {
+  if (formations.places > 0) {
+    return `<button data-id=${formations.id} class="btn-ajouter w-full mt-4 bg-[#009491] p-2 rounded-xl text-white cursor-pointer hover:text-red">
         Ajouter au panier
       </button>`;
 
-  }else{
+  } else {
     return `<button disabled class="w-full mt-4 bg-gray-400 p-2 rounded-xl text-white cursor-not-allowed">
         Complet
       </button>`;
