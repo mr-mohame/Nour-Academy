@@ -170,22 +170,42 @@ function afficherPanier() {
   `;
   main_hero_cart.innerHTML += `
   <div class="">
-    <button class=" btn_retirer w-full bg-[#00A8A6] rounded-2xl p-3 font-bold text-blanc hover:bg-red-300">Continuer vers l’inscription</button>
+    <button class=" btn_inscri w-full bg-[#00A8A6] rounded-2xl p-3 font-bold text-blanc hover:bg-red-300">Continuer vers l’inscription</button>
   
   `
 }
 // supprimer un produit sur le panier 
-main_hero_cart.addEventListener("click", function(event){
+main_hero_cart.addEventListener("click", function (event) {
   const btn = event.target.closest(".btn-retirer")
-  if(!btn) return;
+  if (!btn) return;
 
   const id = Number(btn.dataset.id);
 
-  Panier_list = Panier_list.filter(function(formations){
+  Panier_list = Panier_list.filter(function (formations) {
     return formations.id !== id
 
   });
- afficherPanier();
+  afficherPanier();
+});
+
+// continu vers la page d'inscription et closes avec X 
+const popup_inscription = document.querySelector("#popup-inscription");
+// console.log("Popup:", popup_inscription);
+const cart_close = document.querySelector("#cart-close");
+const close_btn = document.querySelector(".close-btn");
+main_hero_cart.addEventListener("click", function (event) {
+  const btn_inscription = event.target.closest(".btn_inscri");
+  // console.log(btn_inscription)
+
+  if (!btn_inscription ) return;
+  // console.log("Bouton inscription détecté");
+
+  popup_inscription.classList.toggle("hidden");
+  
+});
+close_btn.addEventListener("click", function () {
+  popup_inscription.classList.add("hidden");
+
 });
 
 // pour afficher le popup avec panier et closes avec X et panier 
