@@ -276,22 +276,4 @@ function buttonFormation(formations) {
 
 }
 afficher();
-// let newArry = [];
-// const btnRetirer = main_hero_cart.querySelectorAll(".btn-retirer");
-// console.log("Nombre de boutons :", btnRetirer.length);
-// // console.log(btnRetirer)
-// btnRetirer.forEach(function(btn){
-//   btn.addEventListener("click", function(event){
-//     console.log("Retirer cliqué");
-//     const id = event.target.dataset.id;
-//     console.log(id);
-//     for(let i=0; i<Panier_list.length; i++){
-//       const formation = Panier_list[i];
-//       if(formation=== Number(id)) continue;
-//       newArry.push(formation);
-//     }
-//     // console.log(newArry)
-//     Panier_list = newArry;
-//     afficherPanier()
-// });
-// });
+
