@@ -1,4 +1,4 @@
-const formations = [
+let formations = [
   {
     id: 1,
     titre: "Mathematiques",
@@ -151,7 +151,7 @@ function afficherPanier() {
       <h3>${formation.matiere} — ${formation.niveau}</h3>
       <div class="flex justify-between items-center">
           <h3 class="font-extrabold text-slate-900 text-2xl">${formation.prix}<span> DH</span></h3>
-          <button data-id="${formation.id} class="text-xl rounded-2xl font-normal text-emerald-600 cursor-pointer hover:text-red-500">
+          <button data-id="${formation.id}" class=" btn-retirer text-xl rounded-2xl font-normal text-emerald-600 cursor-pointer hover:text-red-500">
           Retirer
           </button>
       </div>   
@@ -174,7 +174,19 @@ function afficherPanier() {
   
   `
 }
+// supprimer un produit sur le panier 
+main_hero_cart.addEventListener("click", function(event){
+  const btn = event.target.closest(".btn-retirer")
+  if(!btn) return;
 
+  const id = Number(btn.dataset.id);
+
+  Panier_list = Panier_list.filter(function(formations){
+    return formations.id !== id
+
+  });
+ afficherPanier();
+});
 
 // pour afficher le popup avec panier et closes avec X et panier 
 const panier = document.querySelector("#btn");
@@ -244,3 +256,22 @@ function buttonFormation(formations) {
 
 }
 afficher();
+// let newArry = [];
+// const btnRetirer = main_hero_cart.querySelectorAll(".btn-retirer");
+// console.log("Nombre de boutons :", btnRetirer.length);
+// // console.log(btnRetirer)
+// btnRetirer.forEach(function(btn){
+//   btn.addEventListener("click", function(event){
+//     console.log("Retirer cliqué");
+//     const id = event.target.dataset.id;
+//     console.log(id);
+//     for(let i=0; i<Panier_list.length; i++){
+//       const formation = Panier_list[i];
+//       if(formation=== Number(id)) continue;
+//       newArry.push(formation);
+//     }
+//     // console.log(newArry)
+//     Panier_list = newArry;
+//     afficherPanier()
+// });
+// });
