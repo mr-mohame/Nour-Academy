@@ -83,7 +83,7 @@
                 </div>
                 <div class="hidden md:block ">
                     <img src="img/img.webp" alt="Élèves en classe dans un environnement d’apprentissage"
-                        class="w-full h-auto md:w-[600px] rounded-2xl shadow-2xl">
+                        class="w-full md:w-150 h-auto rounded-2xl shadow-2xl">
                 </div>
 
             </div>
@@ -170,54 +170,54 @@
                     class="close-btn cursor-pointer hover:bg-yellow-200">&times;</button>
             </div>
             <div class="m-3">
-                <h3 class="text-center text-[24px] font-bold text-[#0E2936]">Commençons l’inscription</h3>
+                <h3 class="text-center text-[24px] font-bold text-Bleu-nuit">Commençons l’inscription</h3>
                 <p class="text-[12px] font-normal text-[#617075]">Quelques informations pour que notre équipe vous
                     accompagne.</p>
             </div>
             <div class="">
                 <form id="form-inscription" class="mt-3 flex flex-col gap-4 p-3">
-                    <label for="nom" class="text-[15px] font-semibold text-[#142930]">Nom du parent *</label>
+                    <label for="nom" class="text-[15px] font-semibold text-Bleu-nuit">Nom du parent *</label>
                     <input id="nom-parent" name="nom" type="text" placeholder="Ex. : Sara Amrani" required
-                        class="rounded-2xl border border-[#dbe3e0] p-3" />
+                        class="rounded-2xl border border-green-cyan p-3" />
                     <p id="erreur-parent" class="hidden text-sm text-red-600">
                         Le nom du parent est obligatoire.
                     </p>
 
-                    <label for="telephone" class="text-[15px] font-semibold text-[#142930]">Téléphone *</label>
+                    <label for="telephone" class="text-[15px] font-semibold text-text-picker">Téléphone *</label>
                     <input type="telephone" id="telephone" name="telephone" placeholder="06 XX XX XX XX" required
-                        class="rounded-2xl border border-[#dbe3e0] p-3" />
+                        class="rounded-2xl border border-green-cyan p-3" />
 
                     <p id="erreur-telephone" class="mt-1 hidden text-sm text-red-600">
                         Numéro de téléphone invalide.
                     </p>
 
-                    <label for="email" class="text-[15px] font-semibold text-[#142930]">Adresse e-mail *</label>
+                    <label for="email" class="text-[15px] font-semibold text-text-picker">Adresse e-mail *</label>
                     <input type="email" id="email" name="email" placeholder="parent@exemple.com" required
-                        class="rounded-2xl border border-[#dbe3e0] p-3" />
+                        class="rounded-2xl border border-green-cyan p-3" />
                         <p id="erreur-email" class="hidden text-sm text-red-600">
                             L'email est obligatoire.
                         </p>
 
-                    <label for="nom" class="text-[15px] font-semibold text-[#142930]">Nom complet de l’élève
+                    <label for="nom" class="text-[15px] font-semibold text-text-picker">Nom complet de l’élève
                         *</label>
                     <input id="nom-eleve" name="nom-complet" type="text" placeholder="Prénom et nom" required
-                        class="rounded-2xl border border-[#dbe3e0] p-3" />
+                        class="rounded-2xl border border-green-cyan p-3" />
 
                     <p id="erreur-eleve" class="hidden text-sm text-red-600">
                         Le nom d'eleve est obligatoire.
                     </p>
 
                     <!-- <h3>Informations scolaires</h3> -->
-                    <label for="niveau" class="text-[15px] font-semibold text-[#142930]">Niveau scolaire</label>
-                    <select id="niveau" name="niveau" required class="rounded-2xl border border-[#dbe3e0] p-3">
+                    <label for="niveau" class="text-[15px] font-semibold text-text-picker">Niveau scolaire</label>
+                    <select id="niveau" name="niveau" required class="rounded-2xl border border-[green-cyan p-3">
                         <option value="">Choisir un niveau</option>
                         <option value="primaire">Primaire</option>
                         <option value="college">Collège</option>
                         <option value="lycee">Lycée</option>
                     </select>
                     <!-- <h3>Centre souhaité *</h3>  -->
-                    <label for="centre" class="text-[15px] font-semibold text-[#142930]">Centre souhaité *</label>
-                    <select id="centre" name="centre" required class="rounded-2xl border border-[#dbe3e0] p-3">
+                    <label for="centre" class="text-[15px] font-semibold text-text-picker">Centre souhaité *</label>
+                    <select id="centre" name="centre" required class="rounded-2xl border border-green-cyan p-3">
                         <option value="">Choisir un centre</option>
                         <option value="nador-centre">Nador Centre</option>
                         <option value="hay-al-matar">Hay Al Matar</option>
