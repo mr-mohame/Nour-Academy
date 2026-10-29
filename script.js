@@ -116,8 +116,8 @@ const container = document.querySelector("#formation-liste");
 container.addEventListener("click", function (event) {
   const bouton = event.target.closest(".btn-ajouter");
   if (!bouton) return;
+  
   const idchoix = Number(bouton.dataset.id);
-
   let formationChoix;
   for (let i = 0; i < formations.length; i++) {
     if (formations[i].id === idchoix) {
