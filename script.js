@@ -219,9 +219,56 @@ panier.addEventListener("click", function () {
 close_popup.addEventListener("click", function () {
   cart_popup.classList.add("hidden");
 });
+// pour valide le number telephone
+const telephone = document.querySelector("#telephone");
+const erreur_telephone = document.querySelector("#erreur-telephone");
+const regexTelephone = /^06[0-9]{8}$/;
+telephone.addEventListener("input", function(){
+  const validTelephone = telephone.value.trim();
+  if(!regexTelephone.test(validTelephone)){
+    erreur_telephone.classList.remove("hidden");
+  }else{
+    erreur_telephone.classList.add("hidden");
+  }
+  // console.log(regexTelephone.test(telephone.value));
+});
 
+// pour valide le nom et telephone et email  
+const nomPere = document.querySelector("#nom-parent");
+const nomEleve = document.querySelector("#nom-eleve");
+const email = document.querySelector("#email");
+const erreur_parent = document.querySelector("#erreur-parent");
+const erreur_eleve = document.querySelector("#erreur-eleve");
+const erreur_email = document.querySelector("#erreur-email")
+const regexEmail = /^[a-zA-Z0-9._%+-]+@gmail\.com$/
+const regexName = /^[A-Za-z]+ [A-Za-z]+$/
+nomPere.addEventListener("input", function(){
+  const nomPere_proprs = nomPere.value.trim().toLowerCase();
+  if(!regexName.test(nomPere_proprs)){
+    erreur_parent.classList.remove("hidden")
+  }else{
+    erreur_parent.classList.add("hidden");
+  }
 
+});
 
+nomEleve.addEventListener("input", function(){
+  const nomEleve_proprs = nomEleve.value.trim().toLowerCase();
+  if(!regexName.test(nomEleve_proprs)){
+    erreur_eleve.classList.remove("hidden")
+  }else{
+    erreur_eleve.classList.add("hidden");
+  }
+});
+
+email.addEventListener("input", function(){
+  const emailProprs = email.value.trim();
+  if(!regexEmail.test(emailProprs)){
+    erreur_email.classList.remove("hidden");
+  }else{
+    erreur_email.classList.add("hidden");
+  }
+})
 // pour afficher les produit 
 function afficher() {
   const container = document.querySelector("#formation-liste");
