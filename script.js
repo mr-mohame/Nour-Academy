@@ -170,22 +170,42 @@ function afficherPanier() {
   `;
   main_hero_cart.innerHTML += `
   <div class="">
-    <button class=" btn_retirer w-full bg-[#00A8A6] rounded-2xl p-3 font-bold text-blanc hover:bg-red-300">Continuer vers l’inscription</button>
+    <button class=" btn_inscri w-full bg-[#00A8A6] rounded-2xl p-3 font-bold text-blanc hover:bg-red-300">Continuer vers l’inscription</button>
   
   `
 }
 // supprimer un produit sur le panier 
-main_hero_cart.addEventListener("click", function(event){
+main_hero_cart.addEventListener("click", function (event) {
   const btn = event.target.closest(".btn-retirer")
-  if(!btn) return;
+  if (!btn) return;
 
   const id = Number(btn.dataset.id);
 
-  Panier_list = Panier_list.filter(function(formations){
+  Panier_list = Panier_list.filter(function (formations) {
     return formations.id !== id
 
   });
- afficherPanier();
+  afficherPanier();
+});
+
+// continu vers la page d'inscription et closes avec X 
+const popup_inscription = document.querySelector("#popup-inscription");
+// console.log("Popup:", popup_inscription);
+const cart_close = document.querySelector("#cart-close");
+const close_btn = document.querySelector(".close-btn");
+main_hero_cart.addEventListener("click", function (event) {
+  const btn_inscription = event.target.closest(".btn_inscri");
+  // console.log(btn_inscription)
+
+  if (!btn_inscription ) return;
+  // console.log("Bouton inscription détecté");
+
+  popup_inscription.classList.toggle("hidden");
+  
+});
+close_btn.addEventListener("click", function () {
+  popup_inscription.classList.add("hidden");
+
 });
 
 // pour afficher le popup avec panier et closes avec X et panier 
@@ -199,6 +219,23 @@ panier.addEventListener("click", function () {
 close_popup.addEventListener("click", function () {
   cart_popup.classList.add("hidden");
 });
+// pour valide le number telephone
+const telephone = document.querySelector("#telephone");
+const erreur_telephone = document.querySelector("#erreur-telephone");
+const regexTelephone = /^06[0-9]{8}$/;
+telephone.addEventListener("input", function(){
+  const validTelephone = telephone.value.trim();
+  if(!regexTelephone.test(validTelephone)){
+    erreur_telephone.classList.remove("hidden");
+  }else{
+    erreur_telephone.classList.add("hidden");
+  }
+  // console.log(regexTelephone.test(telephone.value));
+});
+
+
+
+
 
 
 
@@ -256,22 +293,4 @@ function buttonFormation(formations) {
 
 }
 afficher();
-// let newArry = [];
-// const btnRetirer = main_hero_cart.querySelectorAll(".btn-retirer");
-// console.log("Nombre de boutons :", btnRetirer.length);
-// // console.log(btnRetirer)
-// btnRetirer.forEach(function(btn){
-//   btn.addEventListener("click", function(event){
-//     console.log("Retirer cliqué");
-//     const id = event.target.dataset.id;
-//     console.log(id);
-//     for(let i=0; i<Panier_list.length; i++){
-//       const formation = Panier_list[i];
-//       if(formation=== Number(id)) continue;
-//       newArry.push(formation);
-//     }
-//     // console.log(newArry)
-//     Panier_list = newArry;
-//     afficherPanier()
-// });
-// });
+

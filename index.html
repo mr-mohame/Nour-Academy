@@ -15,7 +15,7 @@
         <nav class="bg-Bleu-nuit h-16 text-picker relative">
             <div class="max-w-9xl mx-auto h-full flex justify-between items-center relative">
                 <a href="#Accueil" class="flex item-center h-full">
-                    <img src="img/logo.webp" alt="logo de nour academy" class="h-full w-auto ">
+                    <img src="img/logo.webp" alt="logo de nour academy" class="h-full w-auto">
                 </a>
 
                 <input type="checkbox" id="menu-tag" class="peer hidden">
@@ -83,7 +83,7 @@
                 </div>
                 <div class="hidden md:block ">
                     <img src="img/img.webp" alt="Élèves en classe dans un environnement d’apprentissage"
-                        class="w-full h-auto md:w-[600px]">
+                        class="w-full h-auto md:w-[600px] rounded-2xl shadow-2xl">
                 </div>
 
             </div>
@@ -162,12 +162,12 @@
     </main>
 
     <!-- Popup inscription -->
-    <div id="popup-inscription" class="hidden bg-[#ffffff] ">
-        <div class="m-5 bg-[#ffffff] p-3">
+    <div id="popup-inscription" class="hidden fixed inset-0 z-50 overflow-y-auto bg-black/40 p-4">
+        <div class="mx-auto my-4 w-full max-w-lg rounded-2xl bg-white p-3 sm:p-6">
             <div id="header-cart" class="flex items-center justify-between px-2">
                 <h2 class="text-xl font-bold">Nour Academy</h2>
                 <button id="cart-close" type="button" aria-label="Fermer le panier"
-                    class="cursor-pointer hover:bg-yellow-200">&times;</button>
+                    class="close-btn cursor-pointer hover:bg-yellow-200">&times;</button>
             </div>
             <div class="m-3">
                 <h3 class="text-center text-[24px] font-bold text-[#0E2936]">Commençons l’inscription</h3>
@@ -177,17 +177,36 @@
             <div class="">
                 <form id="form-inscription" class="mt-3 flex flex-col gap-4 p-3">
                     <label for="nom" class="text-[15px] font-semibold text-[#142930]">Nom du parent *</label>
-                    <input id="nom" name="nom" type="text" placeholder="Ex. : Sara Amrani"
+                    <input id="nom-parent" name="nom" type="text" placeholder="Ex. : Sara Amrani" required
                         class="rounded-2xl border border-[#dbe3e0] p-3" />
-                    <label for="nom" class="text-[15px] font-semibold text-[#142930]">Téléphone *</label>
-                    <input type="tel" id="telephone" name="telephone" placeholder="+212 6XX XX XX XX" required
+                    <p id="erreur-parent" class="hidden text-sm text-red-600">
+                        Le nom du parent est obligatoire.
+                    </p>
+
+                    <label for="telephone" class="text-[15px] font-semibold text-[#142930]">Téléphone *</label>
+                    <input type="telephone" id="telephone" name="telephone" placeholder="06 XX XX XX XX" required
                         class="rounded-2xl border border-[#dbe3e0] p-3" />
-                    <label for="nom" class="text-[15px] font-semibold text-[#142930]">Adresse e-mail *</label>
+
+                    <p id="erreur-telephone" class="mt-1 hidden text-sm text-red-600">
+                        Numéro de téléphone invalide.
+                    </p>
+
+                    <label for="email" class="text-[15px] font-semibold text-[#142930]">Adresse e-mail *</label>
                     <input type="email" id="email" name="email" placeholder="parent@exemple.com" required
                         class="rounded-2xl border border-[#dbe3e0] p-3" />
-                    <label for="nom" class="text-[15px] font-semibold text-[#142930]">Nom complet de l’élève *</label>
-                    <input id="nom" name="nom" type="text" placeholder="Prénom et nom"
+                        <p id="erreur-email" class="hidden text-sm text-red-600">
+                            L'email est obligatoire.
+                        </p>
+
+                    <label for="nom" class="text-[15px] font-semibold text-[#142930]">Nom complet de l’élève
+                        *</label>
+                    <input id="nom-eleve" name="nom-complet" type="text" placeholder="Prénom et nom" required
                         class="rounded-2xl border border-[#dbe3e0] p-3" />
+
+                    <p id="erreur-eleve" class="hidden text-sm text-red-600">
+                        Le nom d'eleve est obligatoire.
+                    </p>
+
                     <!-- <h3>Informations scolaires</h3> -->
                     <label for="niveau" class="text-[15px] font-semibold text-[#142930]">Niveau scolaire</label>
                     <select id="niveau" name="niveau" required class="rounded-2xl border border-[#dbe3e0] p-3">
