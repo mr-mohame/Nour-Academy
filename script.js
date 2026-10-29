@@ -353,4 +353,5 @@ function buttonFormation(formations) {
 
 }
 afficher();
+window.afficher = afficher;
 
