@@ -134,7 +134,7 @@ container.addEventListener("click", function (event) {
     Panier_list.push(formationChoix);
     afficherPanier();
   } else {
-    console.log("cette formation est deja dans le panier");
+    console.log("cette formation deja dans le panier");
   }
 });
 
@@ -268,8 +268,38 @@ email.addEventListener("input", function(){
   }else{
     erreur_email.classList.add("hidden");
   }
-})
-// pour afficher les produit 
+});
+
+// // check J’accepte d’être contacté(e) pour cette demande
+const form = document.querySelector("#form-inscription")
+// console.log(form);
+const checkbox = document.querySelector("#check");
+// console.log(checkIcon);
+check.addEventListener("change", function(){
+  // console.log(checkbox.checked);
+  if(!form.checkValidity()){
+    alert("remplir la formulaire");
+    checkbox.checked = false;
+  }
+});
+
+//. Envoyer la demande
+const formaEnvoi = document.querySelector("#form-inscription")
+// console.log(form);
+const checkBox = document.querySelector("#check");
+const btn_envoi = document.querySelector("#btn-envoi");
+// console.log(btn_envoi);
+btn_envoi.addEventListener("click", function(){
+  if(!(formaEnvoi.checkValidity() && checkBox.checked)){
+    alert("Remplaire le formulaire");
+    return;
+  }
+  alert("remplair avec succes");
+
+
+});
+
+// // pour afficher les produit 
 function afficher() {
   const container = document.querySelector("#formation-liste");
   const niveau_choisi = document.querySelector("#niveau-select").value;

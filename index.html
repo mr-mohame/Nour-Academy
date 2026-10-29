@@ -226,15 +226,12 @@
                 </form>
             </div>
             <div class="flex items-center gap-3 p-3">
-                <input type="checkbox" id="contact" name="contact"
-                    class="h-7 w-7 shrink-0 cursor-pointer appearance-none rounded-lg border-2 border-teal-500 checked:border-teal-600 checked:bg-teal-600 checked:after:flex checked:after:items-center checked:after:justify-center checked:after:text-white checked:after:content-['✓']" />
-                <label for="contact" class="cursor-pointer text-lg text-gray-800"> J’accepte d’être contacté(e) pour
-                    cette
-                    demande. </label>
+                <input type="checkbox" id="check" name="contact" class="h-7 w-7 shrink-0 cursor-pointer appearance-none rounded-lg border-2 border-teal-500 checked:bg-teal-600" />
+                <label for="check" class=" disabled cursor-pointer text-lg text-gray-800"> J’accepte d’être contacté(e) pour cette demande. </label>
             </div>
             <div class="w-full flex justify-center items-center">
                 <button
-                    class=" border w-70 my-auto bg-[#00A8A6] text-white p-3 rounded-3xl cursor-pointer hover:bg-white hover:text-[#00A8A6]">
+                    id="btn-envoi" class=" border w-70 my-auto bg-[#00A8A6] text-white p-3 rounded-3xl cursor-pointer hover:bg-white hover:text-[#00A8A6]">
                     Envoyer la demande
                 </button>
             </div>
